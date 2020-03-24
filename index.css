@@ -1,0 +1,80 @@
+.col{
+    margin-top: 10px;
+    padding: 8px;
+    text-align: center;
+}
+.kvalprak-kundregister-real{
+    border-color: #609bcf;
+    padding: 8px;
+}
+.affil{
+    width: 90%;
+}
+#search{
+    width: 100%;
+    font-size: 32px;
+}
+#display{
+    font-size: 14px;
+    text-align: center;
+}
+#data{
+    width: 100%;
+    display: inline-block;
+}
+.kundregisterHead{
+    border: solid;
+    border-width: 1px;
+    padding: 4px;
+    background-color: #c7d1ff;
+}
+td{
+    border: solid;
+    border-width: 1px;
+    padding: 4px;
+}
+#newUser{
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+#user{
+    text-align: left;
+}
+.fa-user-plus{
+    padding-top: 15px;
+    cursor: pointer;
+}
+.fa-times{
+    padding-top: 5px;
+    cursor: pointer;
+}
+.fa-plus-square{
+    padding-top: 5px;
+    cursor: pointer;
+}
+#nykund{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+#contacts{
+    margin-top:10px;
+    text-align: left;
+    padding-top: 3px;
+}
+#contactsContainer{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+#footer{
+    height: 500px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}

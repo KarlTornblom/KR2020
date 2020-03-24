@@ -1,0 +1,37 @@
+body{
+    height: 100%;
+}
+.col{
+    margin-top: 18px;
+    padding: 20px;
+    text-align: center;
+    padding: 8px;
+}
+.row{
+    height: 200px;
+}
+form{
+    height: 400px;
+    text-align: center;
+}
+span{
+    text-align: left;
+    color: red;
+}
+#message{
+    text-align: left;
+    width: 55%
+}
+.footer{
+    width: 40%;
+}
+#loginButton{
+    text-align: right;
+}
+input{
+    font-size: 20px;
+    width:250px;
+    height:50px;
+    padding:8px;
+    margin:8px;
+}
