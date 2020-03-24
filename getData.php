@@ -4,8 +4,6 @@
 
     //user input
     $userInput = "%" . $_POST['userInput'] . "%";
-    //generates a guid
-    $id = com_create_guid();
     
     $result = mysqli_query($con,"SELECT * FROM customers WHERE clinic_name LIKE '$userInput'");
     if(!empty($_POST['userInput'])){
