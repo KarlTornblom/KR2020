@@ -24,7 +24,7 @@
         <script src="index.js" async defer></script>
         <link rel="stylesheet" href="index.css">
     </head>
-    <body onload="authenticate()">
+    <body onload="onload()">
 
         <div class="container-fluid">
 
@@ -33,7 +33,7 @@
                 <div class="col col-sm-1"></div>
 
                 <div class="col col-sm-10">
-                    <img class ="kvalprak-kundregister-real" src="resources/kvalprak-kundregister-real.png">
+                    <img class="kvalprak-kundregister-real" src="resources/kvalprak-kundregister-real.png" onclick="loadClients()">
                 </div>
 
                 <div class="col col-sm-1"></div>
@@ -276,12 +276,9 @@
                         </div>
                         <button type='button' onclick='insertData()' class='btn btn-primary'>Spara</button> -->
                     </div>
-                </div>  
+                </div>
 
                 <div class="col col-sm-1"></div>
-            </div>
-            <div class="row">
-                <div class="col col-sm-12" id="footer"></div>
             </div>
         </div>
         <!--[if lt IE 7]>

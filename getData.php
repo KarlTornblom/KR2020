@@ -1,12 +1,15 @@
 <?php
     include 'dbConnect.php';      
     $con = dbConnect();
-
-    //user input
-    $userInput = "%" . $_POST['userInput'] . "%";
     
+
+    if($_POST['userInput'] == "alla"){
+        $result = mysqli_query($con,"SELECT * FROM customers");
+    } 
+    $userInput = "%" . $_POST['userInput'] . "%";
     $result = mysqli_query($con,"SELECT * FROM customers WHERE clinic_name LIKE '$userInput'");
-    if(!empty($_POST['userInput'])){
+    
+    //if(!empty($_POST['userInput'])){
         if(mysqli_num_rows($result) > 0){
             echo "
             <table class='table table-bordered' id='kundregister-rad'>
@@ -17,7 +20,6 @@
                         <th class='kundregisterHead' scope='col'>Telefon</th>
                         <th class='kundregisterHead' scope='col'>KIV länk</th>
                         <th class='kundregisterHead' scope='col'>Antal anställda</th>
-                        <th class='kundregisterHead' scope='col'>Antal filialer</th>
                         <th class='kundregisterHead' scope='col'>Revision</th>
                         <th class='kundregisterHead' scope='col'>Revisionsdatum</th>
                         <th class='kundregisterHead' scope='col'>Revisor</th>
@@ -33,7 +35,6 @@
                     echo "<td>" . $row['phone'] . "</td>";
                     echo "<td>" . $row['kiv_link'] . "</td>";
                     echo "<td>" . $row['number_of_employees'] . "</td>";
-                    echo "<td>" . $row['number_of_affiliates'] . "</td>";
                     echo "<td>" . $row['revision'] . "</td>";
                     echo "<td>" . $row['revisiondate'] . "</td>";
                     echo "<td>" . $row['revisor'] . "</td>";
@@ -44,6 +45,6 @@
                 echo "</tbody>";
             echo "</table>";
         }
-    }    
+    //}    
     mysqli_close($con);
 ?>

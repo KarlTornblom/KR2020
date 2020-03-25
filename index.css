@@ -6,6 +6,7 @@
 .kvalprak-kundregister-real{
     border-color: #609bcf;
     padding: 8px;
+    cursor: pointer;
 }
 .affil{
     width: 90%;
