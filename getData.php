@@ -29,8 +29,9 @@
                 </thead>
                 <tbody>";
                 while($row = mysqli_fetch_array($result)){
-                    echo "<tr value=" . $row['customer_id'] . ">";
-                    echo "<td>" . $row['clinic_name'] . "</td>";
+                    $id = $row['customer_id'];
+                    echo "<tr>";
+                    echo "<td value style='cursor:pointer' onclick='updateData(this.id)'>" . $row['clinic_name'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['phone'] . "</td>";
                     echo "<td>" . $row['kiv_link'] . "</td>";

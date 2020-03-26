@@ -3,12 +3,11 @@
     $con = dbConnect();
 
     //generates a guid
-    $customer_id = com_create_guid();
     
-    $contacts_id = com_create_guid();
 
     $userInfo = $_POST['userInfo'];
-    mysqli_query($con,"INSERT INTO `customers`(
+    $customer_id = uniqid($userInfo['clinicName']);
+    $sql = "INSERT INTO `customers`(
         `customer_id`, 
         `clinic_name`, 
         `adress`, 
@@ -56,36 +55,48 @@
             '$userInfo[products]',
             '$userInfo[comment]',
             '$userInfo[customer_manager]'
-        )"
-    );
+        )";
+    if (mysqli_query($con, $sql)) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($con);
+    }
 
     //contact
-    for ($k = 1 ; $k < 2; $k++){ 
-        $contacts_id = com_create_guid();
+    for ($k = 1 ; $k < 4; $k++){ 
+        
         $name = $userInfo['contact' . $k . 'name'];
         $title = $userInfo['contact' . $k . 'title'];
         $mobile = $userInfo['contact' . $k . 'mobile'];
         $email = $userInfo['contact' . $k . 'email'];
-        mysqli_query($con,"INSERT INTO `contacts`(
+        $contacts_id = uniqid($name);
+        $sql = "INSERT INTO `contacts`(
+        `customer_id`, 
         `contacts_id`, 
         `contact_name`, 
         `contact_title`, 
         `contact_mobile`, 
         `contact_email`) 
         VALUES (
+            '$customer_id',
             '$contacts_id',
             '$name',
             '$title',
             '$mobile',
-            '$email')"
-        );
+            '$email')";
+        if (mysqli_query($con, $sql)) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        }
     };
 
     //affiliate
-    for ($k = 1 ; $k < 4; $k++){ 
-        $affiliate_id = com_create_guid();
+    for ($k = 1 ; $k < 6; $k++){ 
+        
         $name = $userInfo['affiliatename'. $k];
         $number = $userInfo['affiliatenumber'. $k];
+        $affiliate_id = uniqid($name);
         $sql = "INSERT INTO `affiliates`(
             `customer_id`,
             `affiliate_id`, 
@@ -96,6 +107,11 @@
                 '$affiliate_id',
                 '$name',
                 '$number')";
+        if (mysqli_query($con, $sql)) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        }
     };
 
     mysqli_close($con);
