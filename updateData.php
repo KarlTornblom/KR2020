@@ -130,9 +130,15 @@
     </div>
     <div class='row'>
         <div class='col-sm-1 offset-sm-2' style='text-align: left;'>
-            Revision: <select class='form-control' id='revision' style='width:fit-content;'>
-                <option>Ja</option>
-                <option>Nej</option>
+            Revision: <select class='form-control' id='revision' style='width:fit-content;'>";
+    if($customer['revision'] === 'Ja'){
+        echo"   <option selected>Ja</option>
+                <option>Nej</option>";
+    }else{
+        echo"   <option>Ja</option>
+                <option selected>Nej</option>";
+    };
+    echo"  
             </select>
         </div>
         <div class='col-sm-2' style='text-align: left;'>

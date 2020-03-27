@@ -35,11 +35,22 @@ function getData(){
     );
 }
 
+function loadDatepicker(){
+    $('#date, #revisiondate').datepicker({
+        format: "dd-mm-yyyy",
+        todayBtn: "linked",
+        language: "sv",
+        autoclose: true,
+        todayHighlight: true
+    });
+}
+
 function updateData(ele){
     var customer_id = ele;
     $.post("updateData.php", {customer_id: customer_id}, 
         function (result) {
             $('#data').html(result);
+            loadDatepicker();
         }
     );
 }
@@ -172,14 +183,6 @@ function insertData(){
     );
 }
 
-$('#date, #revisiondate').datepicker({
-    format: "dd-mm-yyyy",
-    todayBtn: "linked",
-    language: "sv",
-    autoclose: true,
-    todayHighlight: true
-});
-
 
 
 function nyKund(){
@@ -189,13 +192,7 @@ function nyKund(){
     //         $('#data').html(result);
     //     }
     // );
-    $('#date, #revisiondate').datepicker({
-        format: "dd-mm-yyyy",
-        todayBtn: "linked",
-        language: "sv",
-        autoclose: true,
-        todayHighlight: true
-    });
+    loadDatepicker();
 }
 // var contacts = 0;
 // function addContact(){
