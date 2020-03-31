@@ -1,33 +1,39 @@
 function onload(){
     authenticate();
+    setDefaultSort();
     getData();
     onKeyUp();
 }
 
 function authenticate(){
     if(sessionStorage.getItem("login") != 'true'){
-        location.replace("login/login.html");
+        location.replace("login/login");
     };
 }
 
-// $(document).ready(
-    function onKeyUp(){
-        $("#search").keyup( 
-            function (){
-                getData();
-                // var userInput = $("#search").val();
-                // $.post("getData.php", {userInput: userInput}, 
-                //     function (result) {
-                //         $('#data').html(result);
-                //     }
-                // );
-            }
-        );
-    }
-// );
+function onKeyUp(){
+    $("#search").keyup( 
+        function (){
+            getData();
+                
+        }
+    );
+}
+
+function sort(sortValue){
+    sessionStorage.setItem('sortValue', sortValue);
+    getData();
+}
+
+function setDefaultSort(){
+    sessionStorage.setItem('sortValue', 'clinic_name');
+}
 
 function getData(){
-    var userInput = $("#search").val();
+    var userInput = {
+        search:$("#search").val(),
+        sort:sessionStorage.getItem('sortValue')
+    };
     $.post("getData.php", {userInput: userInput}, 
         function (result) {
             $('#data').html(result);
