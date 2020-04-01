@@ -183,10 +183,11 @@ function insertData(){
         customer_manager:$("#customer_manager").val()
     };
     $.post("insertData.php", {userInfo: userInfo},
-        function (result) {
-            $('#data').html(result);
+        function () {
+            getData();
         }
     );
+    getData();
 }
 
 

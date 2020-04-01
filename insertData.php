@@ -57,7 +57,7 @@
             '$userInfo[customer_manager]'
         )";
     if (mysqli_query($con, $sql)) {
-        echo "New record created successfully";
+        // // echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($con);
     }
@@ -85,7 +85,7 @@
             '$mobile',
             '$email')";
         if (mysqli_query($con, $sql)) {
-            echo "New record created successfully";
+            // echo "New record created successfully";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($con);
         }
@@ -108,7 +108,7 @@
                 '$name',
                 '$number')";
         if (mysqli_query($con, $sql)) {
-            echo "New record created successfully";
+            // echo "New record created successfully";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($con);
         }

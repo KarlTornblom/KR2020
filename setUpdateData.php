@@ -27,11 +27,11 @@
     `notes`='$userInfo[comment]',
     `customer_manager`='$userInfo[customer_manager]' 
     WHERE `customer_id`='$userInfo[customer_id]'";
-    if (mysqli_query($con, $sql)) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($con);
-    }
+    // if (mysqli_query($con, $sql)) {
+    //     echo "New record created successfully";
+    // } else {
+    //     echo "Error: " . $sql . "<br>" . mysqli_error($con);
+    // }
 
     //contact
     for ($k = 1 ; $k < 4; $k++){ 
@@ -46,11 +46,11 @@
         `contact_mobile`='$mobile', 
         `contact_email`='$email'
         WHERE `contacts_id`='$contacts_id'";
-        if (mysqli_query($con, $sql)) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($con);
-        }
+        // if (mysqli_query($con, $sql)) {
+        //     echo "New record created successfully";
+        // } else {
+        //     echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        // }
     };
 
     //affiliate
@@ -62,11 +62,11 @@
         `affiliate_name`='$name', 
         `affiliate_customer_id`='$number'
         WHERE `affiliate_id`='$affiliate_id'";
-        if (mysqli_query($con, $sql)) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($con);
-        }
+        // if (mysqli_query($con, $sql)) {
+        //     echo "New record created successfully";
+        // } else {
+        //     echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        // }
     };
 
     mysqli_close($con);
