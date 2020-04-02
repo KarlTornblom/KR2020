@@ -7,7 +7,7 @@ function onload(){
 
 function authenticate(){
     if(sessionStorage.getItem("login") != 'true'){
-        location.replace("login/login");
+        location.replace("login/login.html");
     };
 }
 

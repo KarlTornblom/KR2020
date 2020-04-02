@@ -12,7 +12,7 @@ $(document).ready(
                     function (result) {
                         if(result == "pass"){
                             sessionStorage.setItem("login", true);
-                            location.replace("../index");
+                            location.replace("../index.html");
                         }else{
                             $('span').html(result);
                         }
