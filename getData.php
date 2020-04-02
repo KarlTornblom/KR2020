@@ -8,9 +8,9 @@
     } 
     $sort = $userInput['sort'];
     $search = "%" . $userInput['search'] . "%";
-    $result = mysql_query($con,"SELECT * FROM customers WHERE clinic_name LIKE '$search' ORDER BY '$sort' DESC");
+    $result = mysql_query("SELECT * FROM customers WHERE clinic_name LIKE '$search' ORDER BY '$sort' DESC",$con);
     
-    if(mysqli_num_rows($result) > 0){
+    if(mysql_num_rows($result) > 0){
         echo "
         <table class='table table-bordered' id='kundregister-rad'>
             <thead>
@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>";
-            while($row = mysqli_fetch_array($result)){
+            while($row = mysql_fetch_array($result)){
                 $id = $row['customer_id'];
                 $test = "
                 <tr>
@@ -49,5 +49,5 @@
         echo "</table>";
     }
         
-    mysqli_close($con);
+    mysql_close($con);
 ?>

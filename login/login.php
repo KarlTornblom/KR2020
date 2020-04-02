@@ -5,8 +5,12 @@
     //user input
     $username = $_GET['username'];
     $password = crypt($_GET['password'], '$1$kvalprakkundregister$');
-    $storedUsers = mysqli_query($con,"SELECT password FROM users WHERE username = '$username'");
-    $storedPassword = mysqli_fetch_array($storedUsers);
+    $storedUsers = mysql_query("SELECT password FROM users WHERE username = '$username'",$con);
+
+    if($storedUsers === FALSE) { 
+        die(mysql_error()); // TODO: better error handling
+    }
+    $storedPassword = mysql_fetch_array($storedUsers, MYSQL_ASSOC);
     
     if($storedPassword['password'] != $password){
         echo "Fel användarnamn eller lösenord";
@@ -14,5 +18,5 @@
         echo "pass";
     };
     
-    mysqli_close($con);
+    mysql_close($con);
 ?>
