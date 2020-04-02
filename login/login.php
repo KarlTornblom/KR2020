@@ -18,8 +18,6 @@
     }else{
         echo "pass";
     };
-
-
-    // $result = mysqli_query($con,"SELECT * FROM  WHERE clinic_name LIKE '$userInput'");
+    
     mysqli_close($con);
 ?>
