@@ -1,22 +1,15 @@
 <?php
-    header('Content-type: text/plain');
-    header('Access-Control-Allow-Origin: *');
     include 'dbConnect.php';      
     $con = dbConnect();
     
-    $userInput = $_POST['userInput'];
+    $userInput = $_GET['userInput'];
     if($userInput['search'] == "alla"){
-        $result = mysqli_query($con,"SELECT * FROM customers");
+        $result = mysql_query($con,"SELECT * FROM customers");
     } 
     $sort = $userInput['sort'];
     $search = "%" . $userInput['search'] . "%";
-    $result = mysqli_query($con,"SELECT * FROM customers WHERE clinic_name LIKE '$search' ORDER BY '$sort' DESC");
+    $result = mysql_query($con,"SELECT * FROM customers WHERE clinic_name LIKE '$search' ORDER BY '$sort' DESC");
     
-    // if (mysqli_query($con,"SELECT * FROM customers WHERE clinic_name LIKE '$search' ORDER BY '$sort'")) {
-    //     echo "Collected data";
-    // } else {
-    //     echo "Error: " . $sql . "<br>" . mysqli_error($con);
-    // }
     if(mysqli_num_rows($result) > 0){
         echo "
         <table class='table table-bordered' id='kundregister-rad'>
@@ -37,18 +30,20 @@
             <tbody>";
             while($row = mysqli_fetch_array($result)){
                 $id = $row['customer_id'];
-                echo "<tr>";
-                echo "<td id='" . $id . "' style='cursor:pointer' onclick='updateData(this.id)'>" . $row['clinic_name'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['phone'] . "</td>";
-                echo "<td>" . $row['kiv_link'] . "</td>";
-                echo "<td>" . $row['number_of_employees'] . "</td>";
-                echo "<td>" . $row['revision'] . "</td>";
-                echo "<td>" . $row['revisiondate'] . "</td>";
-                echo "<td>" . $row['revisor'] . "</td>";
-                echo "<td>" . $row['completed'] . "</td>";
-                echo "<td>" . $row['customer_manager'] . "</td>";
-                echo "</tr>";
+                $test = "
+                <tr>
+                    <td id='" . $id . "' style='cursor:pointer' onclick='updateData(this.id)'>" . $row['clinic_name'] . "</td>
+                    <td>" . $row['email'] . "</td>
+                    <td>" . $row['phone'] . "</td>
+                    <td>" . $row['kiv_link'] . "</td>
+                    <td>" . $row['number_of_employees'] . "</td>
+                    <td>" . $row['revision'] . "</td>
+                    <td>" . $row['revisiondate'] . "</td>
+                    <td>" . $row['revisor'] . "</td>
+                    <td>" . $row['completed'] . "</td>
+                    <td>" . $row['customer_manager'] . "</td>
+                </tr>";
+                echo $test;
             }
             echo "</tbody>";
         echo "</table>";

@@ -8,7 +8,7 @@ $(document).ready(
             function(){
                 var username = $("#username").val();
                 var password = $("#password").val();
-                $.post("login.php", {username: username, password: password}, 
+                $.get("login.php", {username: username, password: password}, 
                     function (result) {
                         if(result == "pass"){
                             sessionStorage.setItem("login", true);
