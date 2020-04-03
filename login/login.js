@@ -11,7 +11,6 @@ $(document).ready(
                 $.get("login.php", {username: username, password: password}, 
                     function (result) {
                         if(result == "pass"){
-                            sessionStorage.setItem("login", true);
                             location.replace("../index.html");
                         }else{
                             $('span').html(result);

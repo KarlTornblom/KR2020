@@ -6,9 +6,11 @@ function onload(){
 }
 
 function authenticate(){
-    if(sessionStorage.getItem("login") != 'true'){
-        location.replace("login/login.html");
-    };
+    $.get( "authentication.php", function(data) {
+        if(!data){
+            location.replace("login/login.html");
+        }
+    });
 }
 
 function onKeyUp(){
