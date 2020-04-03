@@ -2,9 +2,9 @@
     include 'dbConnect.php';      
     $con = dbConnect();
     
-    $id = $_POST['customer_id'];
-    $customers = mysqli_query($con,"SELECT * FROM customers WHERE customer_id = '$id'");
-    $customer = mysqli_fetch_array($customers);
+    $id = $_GET['customer_id'];
+    $customers = mysql_query("SELECT * FROM customers WHERE customer_id = '$id'",$con);
+    $customer = mysql_fetch_array($customers);
     echo "
     <div class='row'>
         <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
@@ -53,12 +53,12 @@
                 </div>
             </div>";
     
-    $affiliates = mysqli_query($con, "SELECT * FROM affiliates WHERE customer_id = '$id'");
+    $affiliates = mysql_query("SELECT * FROM affiliates WHERE customer_id = '$id'", $con);
     $affcount = 1;
     if($affiliates === FALSE) { 
         die(mysql_error()); // TODO: better error handling
     }
-    while($row = mysqli_fetch_array($affiliates)){
+    while($row = mysql_fetch_array($affiliates)){
     echo "  <div class='row' value='" . $row['affiliate_id'] . "' id='affiliateid" . $affcount . "'>
                 <div class='col-sm-9' style='text-align: left;'>";
            echo"    <input value='" . $row['affiliate_name'] . "' autocomplete='off' type='text' class='form-control' id='affiliatename" . $affcount . "' style='width:100%;'>
@@ -99,9 +99,9 @@
                 </div>
             </div>";
 
-    $contacts = mysqli_query($con, "SELECT * FROM contacts WHERE customer_id = '$id'");
+    $contacts = mysql_query("SELECT * FROM contacts WHERE customer_id = '$id'", $con);
     $conCount = 1;
-    while($row = mysqli_fetch_array($contacts)){
+    while($row = mysql_fetch_array($contacts)){
     echo"   <div class='row' value='" . $row['contacts_id'] . "' id='contactid" . $conCount . "'>
                 <div class='col-md-2 offset-md-2' style='text-align: left;'>
                     <input value='" . $row['contact_name'] . "' autocomplete='off' type='text' class='form-control' id='contact" . $conCount . "_name' placeholder='Namn' style='width:100%;'> 
@@ -178,7 +178,14 @@
             Kundansvarig: <input value='" . $customer['customer_manager'] . "' autocomplete='off' type='text' class='form-control' id='customer_manager' style='width:100%;'>
         </div>
     </div></br>
-    <button id='" . $id . "'type='button' onclick='setUpdateData(this.id)' class='btn btn-primary'>Uppdatera</button>";
+    <div class='row'>
+        <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
+            <button id='" . $id . "'type='button' onclick='setUpdateData(this.id)' class='btn btn-primary'>Uppdatera</button>
+        </div>
+        <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
+            <button id='" . $id . "'type='button' onclick='setUpdateData(this.id)' class='btn btn-primary'>Uppdatera</button>
+        </div>
+    </div>";
 
-    mysqli_close($con);
+    mysql_close($con);
 ?>
