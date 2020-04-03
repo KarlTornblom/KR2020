@@ -6,11 +6,19 @@ function onload(){
 }
 
 function authenticate(){
-    $.get( "authentication.php", function(data) {
-        if(!data){
+    $.get("authentication.php", function(result) {
+        if(result == "failed"){
             location.replace("login/login.html");
         }
     });
+}
+
+function logout(){
+    $.get("logout.php",
+        function (result) {
+            location.replace("login/login.html");
+        }
+    );
 }
 
 function onKeyUp(){
@@ -63,7 +71,7 @@ function updateData(ele){
     );
 }
 
-function setUpdateData(id){
+function setUpdateData(id, active){
     if($("#number_of_employees").val()){
         var employees = $("#number_of_employees").val();
     } else {
@@ -122,12 +130,12 @@ function setUpdateData(id){
         completed_assignments:$("#completed_assignments").val(),
         products:$("#products").val(),
         comment:$("#comment").val(),
-        customer_manager:$("#customer_manager").val()
+        customer_manager:$("#customer_manager").val(),
+        active:active
     };
-    console.log("Contacts_id1 =" + userInfo['contacts_id1']);
     $.get("setUpdateData.php", {userInfo: userInfo},
         function (result) {
-            $('#data').html(result);
+            getData();
         }
     );
 }

@@ -8,7 +8,7 @@
     } 
     $sort = $userInput['sort'];
     $search = "%" . $userInput['search'] . "%";
-    $result = mysql_query("SELECT * FROM customers WHERE clinic_name LIKE '$search' ORDER BY '$sort' DESC",$con);
+    $result = mysql_query("SELECT * FROM customers WHERE clinic_name LIKE '$search' AND Active = 1 ORDER BY '$sort' DESC",$con);
     
     if(mysql_num_rows($result) > 0){
         echo "

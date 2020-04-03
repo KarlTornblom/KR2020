@@ -2,7 +2,7 @@
     include 'dbConnect.php';
     $con = dbConnect();
 
-    $userInfo = $_POST['userInfo'];
+    $userInfo = $_GET['userInfo'];
     $sql = "UPDATE `customers` SET 
     `clinic_name`='$userInfo[clinicName]',
     `adress`='$userInfo[adress]',
@@ -25,13 +25,14 @@
     `completed_assignments`='$userInfo[completed_assignments]',
     `products`='$userInfo[products]',
     `notes`='$userInfo[comment]',
-    `customer_manager`='$userInfo[customer_manager]' 
+    `customer_manager`='$userInfo[customer_manager]', 
+    `Active`='$userInfo[active]'
     WHERE `customer_id`='$userInfo[customer_id]'";
-    // if (mysqli_query($con, $sql)) {
-    //     echo "New record created successfully";
-    // } else {
-    //     echo "Error: " . $sql . "<br>" . mysqli_error($con);
-    // }
+    if (mysql_query($sql, $con)) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysql_error($con);
+    }
 
     //contact
     for ($k = 1 ; $k < 4; $k++){ 
@@ -46,11 +47,11 @@
         `contact_mobile`='$mobile', 
         `contact_email`='$email'
         WHERE `contacts_id`='$contacts_id'";
-        // if (mysqli_query($con, $sql)) {
-        //     echo "New record created successfully";
-        // } else {
-        //     echo "Error: " . $sql . "<br>" . mysqli_error($con);
-        // }
+        if (mysql_query($sql, $con)) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysql_error($con);
+        }
     };
 
     //affiliate
@@ -62,13 +63,13 @@
         `affiliate_name`='$name', 
         `affiliate_customer_id`='$number'
         WHERE `affiliate_id`='$affiliate_id'";
-        // if (mysqli_query($con, $sql)) {
-        //     echo "New record created successfully";
-        // } else {
-        //     echo "Error: " . $sql . "<br>" . mysqli_error($con);
-        // }
+        if (mysql_query($sql, $con)) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysql_error($con);
+        }
     };
 
-    mysqli_close($con);
+    mysql_close($con);
 
 ?>

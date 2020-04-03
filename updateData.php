@@ -180,10 +180,10 @@
     </div></br>
     <div class='row'>
         <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
-            <button id='" . $id . "'type='button' onclick='setUpdateData(this.id)' class='btn btn-primary'>Uppdatera</button>
+            <button id='" . $id . "'type='button' onclick='setUpdateData(this.id, 1)' class='btn btn-primary'>Uppdatera</button>
         </div>
         <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
-            <button id='" . $id . "'type='button' onclick='setUpdateData(this.id)' class='btn btn-primary'>Uppdatera</button>
+            <button id='" . $id . "'type='button' onclick='setUpdateData(this.id, 0)' class='btn btn-danger'>Ta bort kund</button>
         </div>
     </div>";
 

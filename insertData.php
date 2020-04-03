@@ -5,7 +5,7 @@
     //generates a guid
     
 
-    $userInfo = $_POST['userInfo'];
+    $userInfo = $_GET['userInfo'];
     $customer_id = uniqid($userInfo['clinicName']);
     $sql = "INSERT INTO `customers`(
         `customer_id`, 
@@ -30,7 +30,8 @@
         `completed_assignments`, 
         `products`, 
         `notes`, 
-        `customer_manager`) 
+        `customer_manager`,
+        `Active`) 
         VALUES (
             '$customer_id',
             '$userInfo[clinicName]',
@@ -54,12 +55,13 @@
             '$userInfo[completed_assignments]',
             '$userInfo[products]',
             '$userInfo[comment]',
-            '$userInfo[customer_manager]'
+            '$userInfo[customer_manager]',
+            '1'
         )";
-    if (mysqli_query($con, $sql)) {
+    if (mysql_query($sql, $con)) {
         // // echo "New record created successfully";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        echo "Error: " . $sql . "<br>" . mysql_error($con);
     }
 
     //contact
@@ -84,10 +86,10 @@
             '$title',
             '$mobile',
             '$email')";
-        if (mysqli_query($con, $sql)) {
+        if (mysql_query($sql, $con)) {
             // echo "New record created successfully";
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($con);
+            echo "Error: " . $sql . "<br>" . mysql_error($con);
         }
     };
 
@@ -107,12 +109,12 @@
                 '$affiliate_id',
                 '$name',
                 '$number')";
-        if (mysqli_query($con, $sql)) {
+        if (mysql_query($sql, $con)) {
             // echo "New record created successfully";
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($con);
+            echo "Error: " . $sql . "<br>" . mysql_error($con);
         }
     };
 
-    mysqli_close($con);
+    mysql_close($con);
 ?>
