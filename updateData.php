@@ -55,9 +55,6 @@
     
     $affiliates = mysql_query("SELECT * FROM affiliates WHERE customer_id = '$id'", $con);
     $affcount = 1;
-    if($affiliates === FALSE) { 
-        die(mysql_error()); // TODO: better error handling
-    }
     while($row = mysql_fetch_array($affiliates)){
     echo "  <div class='row' value='" . $row['affiliate_id'] . "' id='affiliateid" . $affcount . "'>
                 <div class='col-sm-9' style='text-align: left;'>";

@@ -23,7 +23,7 @@
     width: 100%;
     display: inline-block;
 }
-.kundregisterHead{
+thead{
     border: solid;
     border-width: 1px;
     padding: 4px;
