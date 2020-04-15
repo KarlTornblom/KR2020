@@ -50,10 +50,115 @@ function getData(){
     };
     $.get("getData.php", {userInput: userInput}, 
         function (result) {
-            reload_js('https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js')
             $('#data').html(result);
         }
     );
+}
+// Sort functions
+function sortNumber() {
+    var table, rows, switching, i, x, y, dir, shouldSwitch, switchcount = 0;
+    table = document.getElementById("kundregister-rad");
+    switching = true;
+    dir = "asc";
+    /*Make a loop that will continue until
+    no switching has been done:*/
+    while (switching) {
+      //start by saying: no switching is done:
+      switching = false;
+      rows = table.rows;
+      /*Loop through all table rows (except the
+      first, which contains table headers):*/
+      for (i = 1; i < (rows.length - 1); i++) {
+        //start by saying there should be no switching:
+        shouldSwitch = false;
+        /*Get the two elements you want to compare,
+        one from current row and one from the next:*/
+        x = rows[i].getElementsByTagName("TD")[3];
+        y = rows[i + 1].getElementsByTagName("TD")[3];
+        if(dir == "asc"){
+            //check if the two rows should switch place:
+            if (Number(x.innerHTML) > Number(y.innerHTML)) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+        }else if (dir == "desc") {
+            if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                //if so, mark as a switch and break the loop:
+                shouldSwitch = true;
+                break;
+              }
+        }
+      }
+      if (shouldSwitch) {
+        /*If a switch has been marked, make the switch
+        and mark that a switch has been done:*/
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        switchcount ++;
+      }else {
+        /*If no switching has been done AND the direction is "asc",
+        set the direction to "desc" and run the while loop again.*/
+        if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+        }
+      }
+    }
+}
+function sortTable(n) {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.getElementById("kundregister-rad");
+    switching = true;
+    //Set the sorting direction to ascending:
+    dir = "asc"; 
+    /*Make a loop that will continue until
+    no switching has been done:*/
+    while (switching) {
+        //start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /*Loop through all table rows (except the
+        first, which contains table headers):*/
+        for (i = 1; i < (rows.length - 1); i++) {
+            //start by saying there should be no switching:
+            shouldSwitch = false;
+            /*Get the two elements you want to compare,
+            one from current row and one from the next:*/
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            /*check if the two rows should switch place,
+            based on the direction, asc or desc:*/
+            if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch= true;
+                    break;
+                }
+            } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+        }
+        if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+            and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            //Each time a switch is done, increase this count by 1:
+            switchcount ++;      
+        } else {
+            /*If no switching has been done AND the direction is "asc",
+            set the direction to "desc" and run the while loop again.*/
+            if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+            }
+        }
+    }
 }
 
 function loadDatepicker(){
@@ -216,11 +321,3 @@ function nyKund(){
     // );
     loadDatepicker();
 }
-// var contacts = 0;
-// function addContact(){
-//     if(contacts < 2){
-//         document.getElementById('contacts').innerHTML += "<div class='row' style='padding-top: 5px;'>    <div class='col-md-2 offset-md-2' style='text-align: left;'>        <input type='text' class='form-control' id='contact_name " + contacts + "' placeholder='Namn' style='width:fit-content;'>     </div>    <div class='col-md-2' style='text-align: left;'>        <input type='text' class='form-control' id='contact_title" + contacts + "' placeholder='Titel' style='width:fit-content;'>                                  </div>    <div class='col-md-2' style='text-align: left;'>        <input type='text' class='form-control' id='contact_mobile" + contacts + "' placeholder='Mobil' style='width:fit-content;'>    </div>    <div class='col-md-2' style='text-align: left;'>        <input type='text' class='form-control' id='contact_email" + contacts + "' placeholder='Email' style='width:fit-content;'>    </div>    <div class='col-md-2' style='text-align: left;'>        <i class='fas fa-times fa-2x'></i>    </div></div>";
-//         contacts ++;
-//     }
-//     console.log(contacts);
-// }

@@ -23,11 +23,15 @@
     width: 100%;
     display: inline-block;
 }
-thead{
+#tableHead{
     border: solid;
     border-width: 1px;
     padding: 4px;
     background-color: #c7d1ff;
+    cursor: pointer;
+}
+.headCell:hover{
+    background-color: #93a0dd;
 }
 td{
     border: solid;
