@@ -32,6 +32,15 @@
     </div>
     <div class='row'>
         <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
+            Postnummer: <input value='" . $customer['post_number'] . "' autocomplete='off' type='text' class='form-control' id='post_number' style='width:100%;'>
+        </div>
+                
+        <div class='col-sm-4 offset-sm-1' style='text-align: left;'>
+            Ort: <input value='" . $customer['location'] . "' autocomplete='off' type='text' class='form-control' id='location' style='width:100%;'>
+        </div>     
+    </div>
+    <div class='row'>
+        <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
             E-post: <input value='" . $customer['email'] . "' autocomplete='off' type='text' class='form-control' id='email' style='width:100%;'> 
         </div>
         <div class='col-sm-4 offset-sm-1' style='text-align: left;'>

@@ -26,6 +26,8 @@
     `products`='$userInfo[products]',
     `notes`='$userInfo[comment]',
     `customer_manager`='$userInfo[customer_manager]', 
+    `location`='$userInfo[location]',
+    `post_number`='$userInfo[post_number]',  
     `Active`='$userInfo[active]'
     WHERE `customer_id`='$userInfo[customer_id]'";
     if (mysql_query($sql, $con)) {

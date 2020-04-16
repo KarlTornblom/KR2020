@@ -3,9 +3,6 @@
     $con = dbConnect();
     
     $userInput = $_GET['userInput'];
-    if($userInput['search'] == "alla"){
-        $result = mysql_query($con,"SELECT * FROM customers");
-    } 
     $search = "%" . $userInput['search'] . "%";
     $result = mysql_query("SELECT * FROM customers WHERE clinic_name LIKE '$search' AND Active = 1",$con);
     

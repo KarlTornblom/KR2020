@@ -30,6 +30,8 @@
         `completed_assignments`, 
         `products`, 
         `notes`, 
+        `post_number`, 
+        `location`, 
         `customer_manager`,
         `Active`) 
         VALUES (
@@ -55,6 +57,8 @@
             '$userInfo[completed_assignments]',
             '$userInfo[products]',
             '$userInfo[comment]',
+            '$userInfo[post_number]',
+            '$userInfo[location]',
             '$userInfo[customer_manager]',
             '1'
         )";
