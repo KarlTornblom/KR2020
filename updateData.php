@@ -176,7 +176,7 @@
     </div>
     <div class='row'>
         <div class='col-sm-7 offset-sm-2' style='text-align: left;'>
-            Noteringar: <textarea value=". $customer['notes'] . "' class='form-control' rows='5' id='comment' style='width:100%;'></textarea>
+            Noteringar: <textarea class='form-control' rows='5' id='comment' style='width:100%;'>". $customer['notes'] . "</textarea>
         </div>
     </div>
     <div class='row'>
