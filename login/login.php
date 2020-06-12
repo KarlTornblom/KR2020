@@ -1,5 +1,5 @@
 <?php
-    include '../dbConnect.php';      
+    include '../controller/dbConnect.php';      
     $con = dbConnect();   
 
     session_start();

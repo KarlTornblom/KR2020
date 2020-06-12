@@ -1,5 +1,5 @@
 <?php
-    include 'dbConnect.php';
+    include '../controller/dbConnect.php';
     $con = dbConnect();
 
     $userInfo = $_GET['userInfo'];

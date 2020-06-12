@@ -1,5 +1,5 @@
 <?php
-    include 'dbConnect.php';      
+    include '../controller/dbConnect.php';      
     $con = dbConnect();
     
     $userInput = $_GET['userInput'];
@@ -28,7 +28,7 @@
                 $test = "
                 <tr>
                     <td class='displayCell' id='" . $id . "' style='cursor:pointer' onclick='updateData(this.id)'>" . $row['clinic_name'] . "</td>
-                    <td test>" . $row['phone'] . "</td>
+                    <td>" . $row['phone'] . "</td>
                     <td><a href='https://" . $row['kiv_link'] . "'>" . $row['kiv_link'] . "</a></td>
                     <td>" . $row['number_of_employees'] . "</td>
                     <td>" . $row['revision'] . "</td>

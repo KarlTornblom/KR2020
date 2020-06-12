@@ -1,10 +1,23 @@
 <?php
 
     echo "
-        <button type='button' onclick='insertData()' class='btn btn-primary'>Spara</button>    
+            
+        <div class='row'>
+            <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
+                <button type='button' onclick='getData()' class='btn btn-secondary' id='back-button' style='padding: 0;'>
+                    <svg class='bi bi-arrow-left' width='4em' height='36px' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
+                        <path fill-rule='evenodd' d='M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z'/>
+                        <path fill-rule='evenodd' d='M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z'/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class='col-sm-4' style='text-align: left;'>
+                <button type='button' onclick='insertData()' class='btn btn-primary'>Spara</button>
+            </div>
+        </div>
 
         <div class='row'>
-
                 <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                     Namn klinik: <input autocomplete='off' type='text' class='form-control' id='clinicName' style='width:100%;'>
                 </div>
@@ -12,47 +25,39 @@
                 <div class='col-sm-4 offset-sm-1' style='text-align: left;'>
                     Datum: <input autocomplete='off' readonly type='text' class='form-control' id='date' style='width:100%;'>
                 </div>
-
         </div>
 
-        <div class='row'>
-                
+        <div class='row'>     
                 <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                     Adress: <input autocomplete='off' type='text' class='form-control' id='adress' style='width:100%;'>
                 </div>                            
                 
                 <div class='col-sm-4 offset-sm-1' style='text-align: left;'>
                     Version: <input autocomplete='off' type='number' class='form-control' id='version' style='width:100%;'>
-                </div>
-                
+                </div>               
         </div>
         
-        <div class='row'>
-            
+        <div class='row'>           
                 <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                     Postadress: <input autocomplete='off' type='text' class='form-control' id='postadress' style='width:100%;'>
                 </div>
                 
                 <div class='col-sm-4 offset-sm-1' style='text-align: left;'>
                     Arbetsnamn: <input autocomplete='off' type='text' class='form-control' id='workname' style='width:100%;'>
-                </div>
-                
+                </div>               
         </div>
         
-        <div class='row'>
-            
+        <div class='row'>           
                 <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                     Postnummer: <input autocomplete='off' type='text' class='form-control' id='post_number' style='width:100%;'>
                 </div>
                 
                 <div class='col-sm-4 offset-sm-1' style='text-align: left;'>
                     Ort: <input autocomplete='off' type='text' class='form-control' id='location' style='width:100%;'>
-                </div>
-                
+                </div>               
         </div>
 
-        <div class='row'>
-            
+        <div class='row'>           
                 <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                     E-post: <input autocomplete='off' type='text' class='form-control' id='email' style='width:100%;'>
                 </div>
@@ -60,11 +65,10 @@
                 <div class='col-sm-4 offset-sm-1' style='text-align: left;'>
                     Antal anställda: <input autocomplete='off' type='number' class='form-control' id='number_of_employees' style='width:100%;'>
                 </div>
-
         </div>
         
         <div class='row'>
-            
+
                 <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                     Telefon: <input autocomplete='off' type='text' class='form-control' id='phone' style='width:100%;'>
                 </div>

@@ -5,17 +5,17 @@ function onload(){
 }
 
 function authenticate(){
-    $.get("authentication.php", function(result) {
+    $.get("../controller/authentication.php", function(result) {
         if(result == "failed"){
-            location.replace("login/login.html");
+            location.replace("../login/login.html");
         }
     });
 }
 
 function logout(){
-    $.get("logout.php",
+    $.get("../login/logout.php",
         function (result) {
-            location.replace("login/login.html");
+            location.replace("../login/login.html");
         }
     );
 }
@@ -167,6 +167,15 @@ function updateData(ele){
     );
 }
 
+function nyKund(){
+    $.get("newCustomer.php",
+        function (result) {
+            $('#data').html(result);
+            loadDatepicker();
+        }
+    );
+}
+
 function setUpdateData(id, active){
     if($("#number_of_employees").val()){
         var employees = $("#number_of_employees").val();
@@ -231,7 +240,7 @@ function setUpdateData(id, active){
         customer_manager:$("#customer_manager").val(),
         active:active
     };
-    $.get("setUpdateData.php", {userInfo: userInfo},
+    $.get("../model/setUpdateData.php", {userInfo: userInfo},
         function (result) {
             getData();
         }
@@ -292,7 +301,7 @@ function insertData(){
         location:$("#location").val(),
         customer_manager:$("#customer_manager").val()
     };
-    $.get("insertData.php", {userInfo: userInfo},
+    $.get("../model/insertData.php", {userInfo: userInfo},
         function () {
             getData();
         }
@@ -302,11 +311,3 @@ function insertData(){
 
 
 
-function nyKund(){
-    $.get("newCustomer.php",
-        function (result) {
-            $('#data').html(result);
-            loadDatepicker();
-        }
-    );
-}

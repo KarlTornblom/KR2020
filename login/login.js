@@ -11,7 +11,7 @@ $(document).ready(
                 $.get("login.php", {username: username, password: password}, 
                     function (result) {
                         if(result == "pass"){
-                            location.replace("../index.html");
+                            location.replace("../view/index.html");
                         }else{
                             $('span').html(result);
                         }
