@@ -19,6 +19,8 @@
     `password`='$userInfo[password]',
     `revision`='$userInfo[revision]',
     `revisiondate`='$userInfo[revisiondate]',
+    `internalrevision`='$userInfo[internalrevision]',
+    `externalrevision`='$userInfo[externalrevision]',
     `revisor`='$userInfo[revisor]',
     `completed`='$userInfo[completed]',
     `certification`='$userInfo[certification]',

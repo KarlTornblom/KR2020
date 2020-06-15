@@ -288,6 +288,18 @@
         
         <div class='row'>
             
+            <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
+                Internrevision: <input autocomplete='off' type='text' class='form-control' id='internalrevision' style='width:100%;' readonly>
+            </div>
+
+            <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
+                Externrevision: <input autocomplete='off' type='text' class='form-control' id='externalrevision' style='width:100%;' readonly>
+            </div>
+
+        </div>
+        
+        <div class='row'>
+            
                 <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                     Genomförd: <input autocomplete='off' type='text' class='form-control' id='completed' style='width:100%;'>
                 </div>
@@ -331,9 +343,8 @@
             <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                 Kundansvarig: <input autocomplete='off' type='text' class='form-control' id='customer_manager' style='width:100%;'>
             </div>
-            
+        
         </div></br>
 
         <button type='button' onclick='insertData()' class='btn btn-primary'>Spara</button>";
-
 ?>

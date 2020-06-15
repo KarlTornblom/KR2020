@@ -20,6 +20,8 @@
                     <th class='headCell' scope='col'  onclick='sortTable(6)' id='revisor'>Revisor</th>
                     <th class='headCell' scope='col'  onclick='sortTable(7)' id='completed'>Genomförd</th>
                     <th class='headCell' scope='col'  onclick='sortTable(8)' id='customer_manager'>Kundansvarig</th>
+                    <th class='headCell' scope='col'  onclick='sortTable(9)' id='internalrevision'>Internrevision</th>
+                    <th class='headCell' scope='col'  onclick='sortTable(10)' id='externalrevision'>Externrevision</th>
                 </tr>
             </thead>
             <tbody id='tbody'>";
@@ -36,6 +38,8 @@
                     <td>" . $row['revisor'] . "</td>
                     <td>" . $row['completed'] . "</td>
                     <td>" . $row['customer_manager'] . "</td>
+                    <td>" . $row['internalrevision'] . "</td>
+                    <td>" . $row['externalrevision'] . "</td>
                 </tr>";
                 echo $test;
             }

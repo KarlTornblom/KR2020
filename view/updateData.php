@@ -181,6 +181,15 @@
         </div>
     </div>
 
+    <div class='row'>       
+            <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
+                Internrevision: <input value='" . $customer['internalrevision'] . "' autocomplete='off' type='text' class='form-control' id='internalrevision' style='width:100%;' readonly>
+            </div>
+            <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
+                Externrevision: <input value='" . $customer['externalrevision'] . "' autocomplete='off' type='text' class='form-control' id='externalrevision' style='width:100%;' readonly>
+            </div>
+    </div>
+
     <div class='row'>
         <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
             Genomförd: <input value='" . $customer['completed'] . "' autocomplete='off' type='text' class='form-control' id='completed' style='width:100%;'>
