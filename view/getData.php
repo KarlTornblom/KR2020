@@ -16,7 +16,7 @@
                     <th class='headCell' scope='col'  onclick='sortTable(2)' id='link'>KIV länk</th>
                     <th class='headCell' scope='col'  onclick='sortNumber()' id='number_of_employees'>Anställda</th>
                     <th class='headCell' scope='col'  onclick='sortTable(4)' id='revision'>Revision</th>
-                    <th class='headCell' scope='col'  onclick='sortTable(5)' id='revisiondate'>Revisionsdatum</th>
+                    <th class='headCell' scope='col'  onclick='sortTable(5)' id='revisionmonth'>Revisionsmånad</th>
                     <th class='headCell' scope='col'  onclick='sortTable(6)' id='revisor'>Revisor</th>
                     <th class='headCell' scope='col'  onclick='sortTable(7)' id='completed'>Genomförd</th>
                     <th class='headCell' scope='col'  onclick='sortTable(8)' id='customer_manager'>Kundansvarig</th>
@@ -34,7 +34,7 @@
                     <td><a href='https://" . $row['kiv_link'] . "'>" . $row['kiv_link'] . "</a></td>
                     <td>" . $row['number_of_employees'] . "</td>
                     <td>" . $row['revision'] . "</td>
-                    <td>" . $row['revisiondate'] . "</td>
+                    <td>" . $row['revisionmonth'] . "</td>
                     <td>" . $row['revisor'] . "</td>
                     <td>" . $row['completed'] . "</td>
                     <td>" . $row['customer_manager'] . "</td>

@@ -18,7 +18,7 @@
     `username`='$userInfo[username]',
     `password`='$userInfo[password]',
     `revision`='$userInfo[revision]',
-    `revisiondate`='$userInfo[revisiondate]',
+    `revisionmonth`='$userInfo[revisionmonth]',
     `internalrevision`='$userInfo[internalrevision]',
     `externalrevision`='$userInfo[externalrevision]',
     `revisor`='$userInfo[revisor]',

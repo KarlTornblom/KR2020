@@ -161,24 +161,35 @@
     </div>
 
     <div class='row'>
+
         <div class='col-sm-1 offset-sm-2' style='text-align: left;'>
-            Revision: <select class='form-control' id='revision' style='width:fit-content;'>";
-    if($customer['revision'] === 'Ja'){
-        echo"   <option selected>Ja</option>
-                <option>Nej</option>";
-    }else{
-        echo"   <option>Ja</option>
-                <option selected>Nej</option>";
-    };
-    echo"  
+            Revision: <select class='form-control' id='revision' style='width:fit-content;'>
+            <option" . ($customer['revision'] == "Ja" ?     "selected": "") . ">Ja</option>
+            <option" . ($customer['revision'] == "Nej" ?    "selected": "") . ">Nej</option> 
             </select>
         </div>
+
         <div class='col-sm-2' style='text-align: left;'>
-            Revisionsdatum: <input value='" . $customer['revisiondate'] . "' autocomplete='off' type='text' class='form-control' id='revisiondate' style='width:100%;' readonly>
+            Revisionsmånad: <select class='form-control' id='revisionmonth' style='width:100%;'>
+            <option" . ($customer['revisionmonth'] == "Januari" ?  "selected" : "")     . ">Januari</option>
+            <option" . ($customer['revisionmonth'] == "Februari" ? "selected" : "")    . ">Februari</option>
+            <option" . ($customer['revisionmonth'] == "Mars" ?     "selected" : "")        . ">Mars</option>
+            <option" . ($customer['revisionmonth'] == "April" ?    "selected" : "")       . ">April</option>
+            <option" . ($customer['revisionmonth'] == "Maj" ?      "selected" : "")         . ">Maj</option>
+            <option" . ($customer['revisionmonth'] == "Juni" ?     "selected" : "")        . ">Juni</option>
+            <option" . ($customer['revisionmonth'] == "Juli" ?     "selected" : "")        . ">Juli</option>
+            <option" . ($customer['revisionmonth'] == "Augusti" ?  "selected" : "")     . ">Augusti</option>
+            <option" . ($customer['revisionmonth'] == "September" ?"selected" : "")   . ">September</option>
+            <option" . ($customer['revisionmonth'] == "Oktober" ?  "selected" : "")     . ">Oktober</option>
+            <option" . ($customer['revisionmonth'] == "November" ? "selected" : "")    . ">November</option>
+            <option" . ($customer['revisionmonth'] == "December" ? "selected" : "")    . ">December</option>
+            </select>
         </div>
+
         <div class='col-sm-4' style='text-align: left;'>
-            Revisor: <input value='" . $customer['revisor'] . "' autocomplete='off' type='text' class='form-control' id='revisor' style='width:100%;'>
+            Revisor: <input value='" . $customer['revisor'] . "' autocomplete='off' type='text' class='form-control' id='revisor' style='width:fit-content;'>
         </div>
+
     </div>
 
     <div class='row'>       

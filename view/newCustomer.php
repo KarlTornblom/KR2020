@@ -277,7 +277,7 @@
                 </div>
                 
                 <div class='col-sm-2' style='text-align: left;'>
-                    Revisionsdatum: <input autocomplete='off' type='text' class='form-control' id='revisiondate' style='width:100%;' readonly>
+                    Revisionsmånad: <input autocomplete='off' type='text' class='form-control' id='revisionmonth' style='width:100%;' readonly>
                 </div>
                 
                 <div class='col-sm-4' style='text-align: left;'>

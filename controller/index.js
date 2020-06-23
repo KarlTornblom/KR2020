@@ -148,7 +148,7 @@ function sortTable(n) {
 }
 
 function loadDatepicker(){
-    $('#date, #revisiondate, #internalrevision, #externalrevision').datepicker({
+    $('#date, #internalrevision, #externalrevision').datepicker({
         format: "dd-mm-yyyy",
         todayBtn: "linked",
         language: "sv",
@@ -228,7 +228,7 @@ function setUpdateData(id, active){
         contact2email:$("#contact2_email").val(),
         contact3email:$("#contact3_email").val(),
         revision:$("#revision").val(),
-        revisiondate:$("#revisiondate").val(),
+        revisionmonth:$("#revisionmonth").val(),
         revisor:$("#revisor").val(),
         internalrevision:$("#internalrevision").val(),
         externalrevision:$("#externalrevision").val(),
@@ -244,6 +244,7 @@ function setUpdateData(id, active){
     };
     $.get("../model/setUpdateData.php", {userInfo: userInfo},
         function (result) {
+            console.log(result);
             getData();
         }
     );
@@ -292,7 +293,7 @@ function insertData(){
         contact2email:$("#contact2_email").val(),
         contact3email:$("#contact3_email").val(),
         revision:$("#revision").val(),
-        revisiondate:$("#revisiondate").val(),
+        revisionmonth:$("#revisionmonth").val(),
         revisor:$("#revisor").val(),
         internalrevision:$("#internalrevision").val(),
         externalrevision:$("#externalrevision").val(),
