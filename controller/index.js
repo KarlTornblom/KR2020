@@ -41,7 +41,7 @@ function getData(){
 }
 
 // Sort functions
-function sortNumber() {
+function sortNumber(n) {
     var table, rows, switching, i, x, y, dir, shouldSwitch, switchcount = 0;
     table = document.getElementById("kundregister-rad");
     switching = true;
@@ -59,8 +59,8 @@ function sortNumber() {
         shouldSwitch = false;
         /*Get the two elements you want to compare,
         one from current row and one from the next:*/
-        x = rows[i].getElementsByTagName("TD")[3];
-        y = rows[i + 1].getElementsByTagName("TD")[3];
+        x = rows[i].getElementsByTagName("TD")[n];
+        y = rows[i + 1].getElementsByTagName("TD")[n];
         if(dir == "asc"){
             //check if the two rows should switch place:
             if (Number(x.innerHTML) > Number(y.innerHTML)) {
@@ -232,6 +232,7 @@ function setUpdateData(id, active){
         revisor:$("#revisor").val(),
         internalrevision:$("#internalrevision").val(),
         externalrevision:$("#externalrevision").val(),
+        chargemonth:$("#chargemonth").val(),
         completed:$("#completed").val(),
         certification:$("#certification").val(),
         completed_assignments:$("#completed_assignments").val(),
@@ -243,8 +244,7 @@ function setUpdateData(id, active){
         active:active
     };
     $.get("../model/setUpdateData.php", {userInfo: userInfo},
-        function (result) {
-            console.log(result);
+        function () {
             getData();
         }
     );
@@ -297,6 +297,7 @@ function insertData(){
         revisor:$("#revisor").val(),
         internalrevision:$("#internalrevision").val(),
         externalrevision:$("#externalrevision").val(),
+        chargemonth:$("#chargemonth").val(),
         completed:$("#completed").val(),
         certification:$("#certification").val(),
         completed_assignments:$("#completed_assignments").val(),
@@ -306,12 +307,12 @@ function insertData(){
         location:$("#location").val(),
         customer_manager:$("#customer_manager").val()
     };
+    
     $.get("../model/insertData.php", {userInfo: userInfo},
         function () {
             getData();
         }
     );
-    getData();
 }
 
 

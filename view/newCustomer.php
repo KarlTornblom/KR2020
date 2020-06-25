@@ -1,7 +1,5 @@
 <?php
-
     echo "
-            
         <div class='row'>
             <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                 <button type='button' onclick='getData()' class='btn btn-secondary' id='back-button' style='padding: 0;'>
@@ -271,13 +269,27 @@
             
                 <div class='col-sm-1 offset-sm-2' style='text-align: left;'>
                     Revision: <select class='form-control' id='revision' style='width:fit-content;'>
-                        <option>Ja</option>
+                        <option selected>Ja</option>
                         <option>Nej</option>
                     </select>
                 </div>
                 
                 <div class='col-sm-2' style='text-align: left;'>
-                    Revisionsmånad: <input autocomplete='off' type='text' class='form-control' id='revisionmonth' style='width:100%;' readonly>
+                    Revisionsmånad: 
+                    <select class='form-control' id='revisionmonth' style='width:100%;'>
+                        option value='01' selected>Januari</option>
+                        option value='02'>Februari</option>
+                        option value='03'>Mars</option>
+                        option value='04'>April</option>
+                        option value='05'>Maj</option>
+                        option value='06'>Juni</option>
+                        option value='07'>Juli</option>
+                        option value='08'>Augusti</option>
+                        option value='09'>September</option>
+                        option value='10'>Oktober</option>
+                        option value='11'>November</option>
+                        option value='12'>December</option>
+                    </select>
                 </div>
                 
                 <div class='col-sm-4' style='text-align: left;'>
@@ -287,7 +299,7 @@
         </div>
         
         <div class='row'>
-            
+    
             <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
                 Internrevision: <input autocomplete='off' type='text' class='form-control' id='internalrevision' style='width:100%;' readonly>
             </div>
@@ -297,7 +309,27 @@
             </div>
 
         </div>
-        
+
+        <div class='row'>
+            <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
+                Avgiftssmånad: 
+                <select class='form-control' id='chargemonth' style='width:100%;'>
+                    <option value='01' selected>Januari</option>
+                    <option value='02'>Februari</option>
+                    <option value='03'>Mars</option>
+                    <option value='04'>April</option>
+                    <option value='05'>Maj</option>
+                    <option value='06'>Juni</option>
+                    <option value='07'>Juli</option>
+                    <option value='08'>Augusti</option>
+                    <option value='09'>September</option>
+                    <option value='10'>Oktober</option>
+                    <option value='11'>November</option>
+                    <option value='12'>December</option>
+                </select>
+            </div>
+        </div>
+            
         <div class='row'>
             
                 <div class='col-sm-4 offset-sm-2' style='text-align: left;'>

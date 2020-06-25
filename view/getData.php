@@ -14,18 +14,20 @@
                     <th class='headCell' scope='col'  onclick='sortTable(0)' id='clinic_name'>Namn klinik</th>
                     <th class='headCell' scope='col'  onclick='sortTable(1)' id='phone'>Telefon</th>
                     <th class='headCell' scope='col'  onclick='sortTable(2)' id='link'>KIV länk</th>
-                    <th class='headCell' scope='col'  onclick='sortNumber()' id='number_of_employees'>Anställda</th>
+                    <th class='headCell' scope='col'  onclick='sortNumber(3)' id='number_of_employees'>Anställda</th>
                     <th class='headCell' scope='col'  onclick='sortTable(4)' id='revision'>Revision</th>
-                    <th class='headCell' scope='col'  onclick='sortTable(5)' id='revisionmonth'>Revisionsmånad</th>
+                    <th class='headCell' scope='col'  onclick='sortNumber(5)' id='revisionmonth'>Revisionsmånad</th>
                     <th class='headCell' scope='col'  onclick='sortTable(6)' id='revisor'>Revisor</th>
                     <th class='headCell' scope='col'  onclick='sortTable(7)' id='completed'>Genomförd</th>
                     <th class='headCell' scope='col'  onclick='sortTable(8)' id='customer_manager'>Kundansvarig</th>
                     <th class='headCell' scope='col'  onclick='sortTable(9)' id='internalrevision'>Internrevision</th>
                     <th class='headCell' scope='col'  onclick='sortTable(10)' id='externalrevision'>Externrevision</th>
+                    <th class='headCell' scope='col'  onclick='sortNumber(11)' id='chargemonth'>Avgiftsmånad</th>
                 </tr>
             </thead>
             <tbody id='tbody'>";
             while($row = mysql_fetch_array($result)){
+
                 $id = $row['customer_id'];
                 $test = "
                 <tr>
@@ -40,6 +42,7 @@
                     <td>" . $row['customer_manager'] . "</td>
                     <td>" . $row['internalrevision'] . "</td>
                     <td>" . $row['externalrevision'] . "</td>
+                    <td>" . $row['chargemonth'] . "</td>
                 </tr>";
                 echo $test;
             }

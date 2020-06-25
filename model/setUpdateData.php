@@ -21,9 +21,11 @@
     `revisionmonth`='$userInfo[revisionmonth]',
     `internalrevision`='$userInfo[internalrevision]',
     `externalrevision`='$userInfo[externalrevision]',
+    `chargemonth`='$userInfo[chargemonth]',
     `revisor`='$userInfo[revisor]',
     `completed`='$userInfo[completed]',
     `certification`='$userInfo[certification]',
+
     `completed_assignments`='$userInfo[completed_assignments]',
     `products`='$userInfo[products]',
     `notes`='$userInfo[comment]',
@@ -33,7 +35,6 @@
     `Active`='$userInfo[active]'
     WHERE `customer_id`='$userInfo[customer_id]'";
     if (mysql_query($sql, $con)) {
-        echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysql_error($con);
     }
@@ -52,7 +53,6 @@
         `contact_email`='$email'
         WHERE `contacts_id`='$contacts_id'";
         if (mysql_query($sql, $con)) {
-            echo "New record created successfully";
         } else {
             echo "Error: " . $sql . "<br>" . mysql_error($con);
         }
@@ -68,7 +68,6 @@
         `affiliate_customer_id`='$number'
         WHERE `affiliate_id`='$affiliate_id'";
         if (mysql_query($sql, $con)) {
-            echo "New record created successfully";
         } else {
             echo "Error: " . $sql . "<br>" . mysql_error($con);
         }
