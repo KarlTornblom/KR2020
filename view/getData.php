@@ -1,5 +1,5 @@
 <?php
-    include '../controller/dbConnect.php';      
+    include '../controller/dbConnect.php';
     $con = dbConnect();
     
     $userInput = $_GET['userInput'];
@@ -16,12 +16,12 @@
                     <th class='headCell' scope='col'  onclick='sortTable(2)' id='link'>KIV länk</th>
                     <th class='headCell' scope='col'  onclick='sortNumber(3)' id='number_of_employees'>Anställda</th>
                     <th class='headCell' scope='col'  onclick='sortTable(4)' id='revision'>Revision</th>
-                    <th class='headCell' scope='col'  onclick='sortNumber(5)' id='revisionmonth'>Revisionsmånad</th>
+                    <th class='headCell' scope='col'  onclick='sortTable(5)' id='revisionmonth'>Revisionsmånad</th>
                     <th class='headCell' scope='col'  onclick='sortTable(6)' id='revisor'>Revisor</th>
-                    <th class='headCell' scope='col'  onclick='sortTable(7)' id='completed'>Genomförd</th>
+                    <th class='headCell' scope='col'  onclick='sortDate(7)' id='completed'>Genomförd</th>
                     <th class='headCell' scope='col'  onclick='sortTable(8)' id='customer_manager'>Kundansvarig</th>
-                    <th class='headCell' scope='col'  onclick='sortTable(9)' id='internalrevision'>Internrevision</th>
-                    <th class='headCell' scope='col'  onclick='sortTable(10)' id='externalrevision'>Externrevision</th>
+                    <th class='headCell' scope='col'  onclick='sortDate(9)' id='internalrevision'>Internrevision</th>
+                    <th class='headCell' scope='col'  onclick='sortDate(10)' id='externalrevision'>Externrevision</th>
                     <th class='headCell' scope='col'  onclick='sortNumber(11)' id='chargemonth'>Avgiftsmånad</th>
                 </tr>
             </thead>
