@@ -1,10 +1,8 @@
 <?php
     include '../controller/dbConnect.php';
     $con = dbConnect();
-
-    //generates a guid
     
-
+    
     $userInfo = $_GET['userInfo'];
     $customer_id = uniqid($userInfo['clinicName']);
     $sql = "INSERT INTO `customers`(

@@ -221,7 +221,7 @@ function sortTable(n) {
 }
 
 function loadDatepicker(){
-    $('#date, #internalrevision, #externalrevision, #completed').datepicker({
+    $('#date, #internalrevision, #externalrevision, #completed, #revision_date').datepicker({
         format: "dd-mm-yyyy",
         todayBtn: "linked",
         language: "sv",
@@ -388,5 +388,32 @@ function insertData(){
     );
 }
 
+function removeRevision(revision_id){
+    console.log("called");
+    var id = String(revision_id);
+    $.get("../model/removeRevision.php", {id},
+        function (result) {
+            $('#' + id).remove();
+            $('#revisioner').append(result);
+        }
+    );
+}
+
+function addRevision(customer_id){
+    var userInfo = {
+        clinicName:$("#clinicName").val(),
+        customer_id:customer_id,
+        revision_date:$("#revision_date").val(),
+        revision_type:$("#revision_type").val(),
+        revision_revisor:$("#revision_revisor").val(),
+        revision_result:$("#revision_result").val()
+    };
+
+    $.get("../model/addRevision.php", {userInfo: userInfo},
+        function (result) { 
+            $('#revisioner').append(result);
+        }
+    );
+}
 
 

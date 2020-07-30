@@ -254,7 +254,70 @@
         <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
             Kundansvarig: <input value='" . $customer['customer_manager'] . "' autocomplete='off' type='text' class='form-control' id='customer_manager' style='width:100%;'>
         </div>
+    </div>
+
+    <!---------------------------------------------------------Revisioner------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <div class='row'>
+        <div class='col-md-2 offset-md-2' style='text-align: left;'>
+            Revisioner:
+        </div>
+    </div>
+
+    <!-- Ny Revision -->
+
+    <div class='row'>
+        <div class='col-md-2 offset-md-2' style='text-align: left;'>
+            <input  autocomplete='off' type='text' class='form-control' id='revision_date' placeholder='Datum' style='width:100%;' readonly> 
+        </div>
+        <div class='col-md-2' style='text-align: left;'>
+            <input  autocomplete='off' type='text' class='form-control' id='revision_type' placeholder='Typ' style='width:100%;'>                              
+        </div>
+        <div class='col-md-2' style='text-align: left;'>
+            <input  autocomplete='off' type='text' class='form-control' id='revision_revisor' placeholder='Revisor' style='width:100%;'>
+        </div>
+        <div class='col-md-2' style='text-align: left;'>
+            <input  autocomplete='off' type='text' class='form-control' id='revision_result' placeholder='Resultat' style='width:100%;'>
+        </div>
+        <div class='col-md-2' style='text-align: left;'>
+            <button id='" . $id . "' type='button' onclick='addRevision(this.id)' class='btn btn-light'>Lägg till</button>
+        </div>
     </div></br>
+    
+
+    <!-- Tidigare revisioner-->
+
+
+    <div class='row'>
+        <div class='col-md-2 offset-md-2' style='text-align: left;'>
+            Färdiga Revisioner:
+        </div>
+    </div>
+
+    <div id='revisioner'>";
+    $contacts = mysql_query("SELECT * FROM revisions WHERE customer_id = '$id' AND active = 1", $con);
+    while($row = mysql_fetch_array($contacts)){
+    echo"   <div class='row' id='" . $row['revision_id'] . "'>
+                <div class='col-md-2 offset-md-2' style='text-align: left;'>
+                    <input value='" . $row['revision_date'] . "' autocomplete='off' type='text' class='form-control' style='width:100%;' readonly> 
+                </div>
+                <div class='col-md-2' style='text-align: left;'>
+                    <input value='" . $row['revision_type'] . "' autocomplete='off' type='text' class='form-control'  style='width:100%;' readonly>                              
+                </div>
+                <div class='col-md-2' style='text-align: left;'>
+                    <input value='" . $row['revision_revisor'] . "' autocomplete='off' type='text' class='form-control'  style='width:100%;' readonly>
+                </div>
+                <div class='col-md-2' style='text-align: left;'>
+                    <input value='" . $row['revision_result'] . "' autocomplete='off' type='text' class='form-control'  style='width:100%;' readonly>
+                </div>
+                <div class='col-md-2' style='text-align: left;'>
+                    <button id='" . $row['revision_id'] . "' type='button' onclick='removeRevision(this.id)' class='btn btn-outline-danger'>-</button>
+                </div>
+            </div>";
+    };
+    echo "  </div>
+        </br>
+    <!---------------------------------------------------------Spara/Ta bort------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
     <div class='row'>
         <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
