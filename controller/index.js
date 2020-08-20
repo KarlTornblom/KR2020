@@ -389,12 +389,12 @@ function insertData(){
 }
 
 function removeRevision(revision_id){
-    console.log("called");
     var id = String(revision_id);
     $.get("../model/removeRevision.php", {id},
         function (result) {
-            $('#' + id).remove();
-            $('#revisioner').append(result);
+            $('#rev' + id).remove();
+            console.log("#rev" + id)
+            // $('#revisioner').append(result);
         }
     );
 }

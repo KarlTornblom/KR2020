@@ -27,7 +27,7 @@
         echo "Error: " . $sql . "<br>" . mysql_error($con);
     }
     echo "
-    <div class='row'>
+    <div class='row' id='rev" . $revision_id . "'>
         <div class='col-md-2 offset-md-2' style='text-align: left;'>
             <input value='" . $userInfo['revision_date'] . "' autocomplete='off' type='text' class='form-control' style='width:100%;' readonly> 
         </div>

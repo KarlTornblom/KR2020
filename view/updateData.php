@@ -260,7 +260,7 @@
 
     <div class='row'>
         <div class='col-md-2 offset-md-2' style='text-align: left;'>
-            Revisioner:
+            Ny Revision:
         </div>
     </div>
 
@@ -270,15 +270,30 @@
         <div class='col-md-2 offset-md-2' style='text-align: left;'>
             <input  autocomplete='off' type='text' class='form-control' id='revision_date' placeholder='Datum' style='width:100%;' readonly> 
         </div>
+
         <div class='col-md-2' style='text-align: left;'>
-            <input  autocomplete='off' type='text' class='form-control' id='revision_type' placeholder='Typ' style='width:100%;'>                              
+            <select class='form-control' id='revision_type' style='width:100%;'>
+                <option value='KIV Standard'>         KIV Standard</option>
+                <option value='KIV Mindre'>           KIV Standard</option>
+                <option value='Kvalprak - Läkare'>    Kvalprak - Läkare</option>
+                <option value='Kvalprak - Kiro'>      Kvalprak - Kiro</option>
+                <option value='Kvalprak - Frivillig'> Kvalprak - Frivillig</option>
+            </select>                            
         </div>
+
         <div class='col-md-2' style='text-align: left;'>
             <input  autocomplete='off' type='text' class='form-control' id='revision_revisor' placeholder='Revisor' style='width:100%;'>
         </div>
+
         <div class='col-md-2' style='text-align: left;'>
-            <input  autocomplete='off' type='text' class='form-control' id='revision_result' placeholder='Resultat' style='width:100%;'>
+            <select class='form-control' id='revision_result' style='width:100%;'>
+                <option value='Godkänd'>                            Godkänd</option>
+                <option value='Godkänd med påpekande'>              Godkänd med påpekande</option>
+                <option value='Icke godkänd'>                       Icke godkänd</option>
+                <option value='Kan godkännas efter komplettering'>  Kan godkännas efter komplettering</option>
+            </select> 
         </div>
+
         <div class='col-md-2' style='text-align: left;'>
             <button id='" . $id . "' type='button' onclick='addRevision(this.id)' class='btn btn-light'>Lägg till</button>
         </div>
@@ -297,7 +312,7 @@
     <div id='revisioner'>";
     $contacts = mysql_query("SELECT * FROM revisions WHERE customer_id = '$id' AND active = 1", $con);
     while($row = mysql_fetch_array($contacts)){
-    echo"   <div class='row' id='" . $row['revision_id'] . "'>
+    echo"   <div class='row' id='rev" . $row['revision_id'] . "'>
                 <div class='col-md-2 offset-md-2' style='text-align: left;'>
                     <input value='" . $row['revision_date'] . "' autocomplete='off' type='text' class='form-control' style='width:100%;' readonly> 
                 </div>
