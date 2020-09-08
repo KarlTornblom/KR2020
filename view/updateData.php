@@ -274,7 +274,7 @@
         <div class='col-md-2' style='text-align: left;'>
             <select class='form-control' id='revision_type' style='width:100%;'>
                 <option value='KIV Standard'>         KIV Standard</option>
-                <option value='KIV Mindre'>           KIV Standard</option>
+                <option value='KIV Mindre'>           KIV Mindre</option>
                 <option value='Kvalprak - Läkare'>    Kvalprak - Läkare</option>
                 <option value='Kvalprak - Kiro'>      Kvalprak - Kiro</option>
                 <option value='Kvalprak - Frivillig'> Kvalprak - Frivillig</option>
