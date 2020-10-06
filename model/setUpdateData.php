@@ -23,7 +23,7 @@
     `externalrevision`='$userInfo[externalrevision]',
     `chargemonth`='$userInfo[chargemonth]',
     `revisor`='$userInfo[revisor]',
-    `completed`='$userInfo[completed]',
+    `nextcontact`='$userInfo[nextcontact]',
     `certification`='$userInfo[certification]',
 
     `completed_assignments`='$userInfo[completed_assignments]',

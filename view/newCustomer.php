@@ -333,7 +333,7 @@
         <div class='row'>
             
                 <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
-                    Genomförd: <input autocomplete='off' type='text' class='form-control' id='completed' style='width:100%;' readonly>
+                    Nästa kontakt: <input autocomplete='off' type='text' class='form-control' id='nextcontact' style='width:100%;' readonly>
                 </div>
                 
         </div>

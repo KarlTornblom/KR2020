@@ -19,7 +19,7 @@
                     <th class='headCell' scope='col'  onclick='sortTable(5)' id='revisionmonth'>Revisionsmånad</th>
                     <th class='headCell' scope='col'  onclick='sortNumber(6)' id='chargemonth'>Avgiftsmånad</th>
                     <th class='headCell' scope='col'  onclick='sortTable(7)' id='revisor'>Revisor</th>
-                    <th class='headCell' scope='col'  onclick='sortDate(8)' id='completed'>Genomförd</th>
+                    <th class='headCell' scope='col'  onclick='sortDate(8)' id='nextcontact'>Nästa kontakt</th>
                     <th class='headCell' scope='col'  onclick='sortTable(9)' id='customer_manager'>Kundansvarig</th>
                     <th class='headCell' scope='col'  onclick='sortDate(10)' id='internalrevision'>Internrevision</th>
                     <th class='headCell' scope='col'  onclick='sortDate(11)' id='externalrevision'>Externrevision</th>
@@ -39,7 +39,7 @@
                     <td>" . $row['revisionmonth'] . "</td>
                     <td>" . $row['chargemonth'] . "</td>
                     <td>" . $row['revisor'] . "</td>
-                    <td>" . $row['completed'] . "</td>
+                    <td>" . $row['nextcontact'] . "</td>
                     <td>" . $row['customer_manager'] . "</td>
                     <td>" . $row['internalrevision'] . "</td>
                     <td>" . $row['externalrevision'] . "</td>

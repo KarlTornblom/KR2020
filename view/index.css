@@ -34,6 +34,7 @@
     background-color: #93a0dd;
 }
 td{
+    text-align: left;
     border: solid;
     border-width: 1px;
     padding: 4px;

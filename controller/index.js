@@ -221,7 +221,7 @@ function sortTable(n) {
 }
 
 function loadDatepicker(){
-    $('#date, #internalrevision, #externalrevision, #completed, #revision_date').datepicker({
+    $('#date, #internalrevision, #externalrevision, #nextcontact, #revision_date').datepicker({
         format: "dd-mm-yyyy",
         todayBtn: "linked",
         language: "sv",
@@ -306,7 +306,7 @@ function setUpdateData(id, active){
         internalrevision:$("#internalrevision").val(),
         externalrevision:$("#externalrevision").val(),
         chargemonth:$("#chargemonth").val(),
-        completed:$("#completed").val(),
+        nextcontact:$("#nextcontact").val(),
         certification:$("#certification").val(),
         completed_assignments:$("#completed_assignments").val(),
         products:$("#products").val(),
@@ -371,7 +371,7 @@ function insertData(){
         internalrevision:$("#internalrevision").val(),
         externalrevision:$("#externalrevision").val(),
         chargemonth:$("#chargemonth").val(),
-        completed:$("#completed").val(),
+        nextcontact:$("#nextcontact").val(),
         certification:$("#certification").val(),
         completed_assignments:$("#completed_assignments").val(),
         products:$("#products").val(),
