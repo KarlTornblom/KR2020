@@ -1,4 +1,4 @@
 <?php
     session_start();
-    $_SESSION['login'] = "logout";
+    setcookie("Authentication", "", time() - 3600, "/");
 ?>

@@ -16,19 +16,99 @@
                     <th class='headCell' scope='col'  onclick='sortTable(2)' id='link'>KIV länk</th>
                     <th class='headCell' scope='col'  onclick='sortNumber(3)' id='number_of_employees'>Anställda</th>
                     <th class='headCell' scope='col'  onclick='sortTable(4)' id='revision'>Revision</th>
-                    <th class='headCell' scope='col'  onclick='sortTable(5)' id='revisionmonth'>Revisionsmånad</th>
-                    <th class='headCell' scope='col'  onclick='sortNumber(6)' id='chargemonth'>Avgiftsmånad</th>
+                    <th class='headCell' scope='col'  onclick='sortMonth(5)' id='revisionmonth'>Revisionsmånad</th>
+                    <th class='headCell' scope='col'  onclick='sortMonth(6)' id='chargemonth'>Avgiftsmånad</th>
                     <th class='headCell' scope='col'  onclick='sortTable(7)' id='revisor'>Revisor</th>
                     <th class='headCell' scope='col'  onclick='sortDate(8)' id='nextcontact'>Nästa kontakt</th>
-                    <th class='headCell' scope='col'  onclick='sortTable(9)' id='customer_manager'>Kundansvarig</th>
-                    <th class='headCell' scope='col'  onclick='sortDate(10)' id='internalrevision'>Internrevision</th>
-                    <th class='headCell' scope='col'  onclick='sortDate(11)' id='externalrevision'>Externrevision</th>
+                    <th class='headCell' scope='col'  onclick='sortDate(9)' id='internalrevision'>Internrevision</th>
+                    <th class='headCell' scope='col'  onclick='sortDate(10)' id='externalrevision'>Externrevision</th>
                 </tr>
             </thead>
             <tbody id='tbody'>";
             while($row = mysql_fetch_array($result)){
 
                 $id = $row['customer_id'];
+
+                switch ($row['revisionmonth']) {
+                    case 1:
+                        $revisionMonthName = "Januari";
+                        break;
+                    case 2:
+                        $revisionMonthName = "Februari";
+                        break;
+                    case 3:
+                        $revisionMonthName = "Mars";
+                        break;
+                    case 4:
+                        $revisionMonthName = "April";
+                        break;
+                    case 5:
+                        $revisionMonthName = "Maj";
+                        break;
+                    case 6:
+                        $revisionMonthName = "Juni";
+                        break;
+                    case 7:
+                        $revisionMonthName = "Juli";
+                        break;
+                    case 8:
+                        $revisionMonthName = "Augusti";
+                        break;
+                    case 9:
+                        $revisionMonthName = "September";
+                        break;
+                    case 10:
+                        $revisionMonthName = "Oktober";
+                        break;
+                    case 11:
+                        $revisionMonthName = "November";
+                        break;
+                    case 12:
+                        $revisionMonthName = "December";
+                        break;
+                    case 13:
+                        $revisionMonthName = "Accepterar ej revision";
+                }
+
+                switch ($row['chargemonth']) {
+                    case 1:
+                        $chargeMonthName = "Januari";
+                        break;
+                    case 2:
+                        $chargeMonthName = "Februari";
+                        break;
+                    case 3:
+                        $chargeMonthName = "Mars";
+                        break;
+                    case 4:
+                        $chargeMonthName = "April";
+                        break;
+                    case 5:
+                        $chargeMonthName = "Maj";
+                        break;
+                    case 6:
+                        $chargeMonthName = "Juni";
+                        break;
+                    case 7:
+                        $chargeMonthName = "Juli";
+                        break;
+                    case 8:
+                        $chargeMonthName = "Augusti";
+                        break;
+                    case 9:
+                        $chargeMonthName = "September";
+                        break;
+                    case 10:
+                        $chargeMonthName = "Oktober";
+                        break;
+                    case 11:
+                        $chargeMonthName = "November";
+                        break;
+                    case 12:
+                        $chargeMonthName = "December";
+                        break;
+                }
+
                 $test = "
                 <tr>
                     <td class='displayCell' id='" . $id . "' style='cursor:pointer' onclick='updateData(this.id)'>" . $row['clinic_name'] . "</td>
@@ -36,11 +116,10 @@
                     <td><a href='https://" . $row['kiv_link'] . "'>" . $row['kiv_link'] . "</a></td>
                     <td>" . $row['number_of_employees'] . "</td>
                     <td>" . $row['revision'] . "</td>
-                    <td>" . $row['revisionmonth'] . "</td>
-                    <td>" . $row['chargemonth'] . "</td>
+                    <td data-month=" . $row['revisionmonth'] . ">" . $revisionMonthName . "</td>
+                    <td data-month=" . $row['chargemonth'] . ">" . $chargeMonthName . "</td>
                     <td>" . $row['revisor'] . "</td>
                     <td>" . $row['nextcontact'] . "</td>
-                    <td>" . $row['customer_manager'] . "</td>
                     <td>" . $row['internalrevision'] . "</td>
                     <td>" . $row['externalrevision'] . "</td>
                 </tr>";

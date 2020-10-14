@@ -1,5 +1,11 @@
 function loadLogin(){
+    $.get("../controller/authentication.php", function(result) {
+        if(result == "authenticated"){
+            location.replace("../view/index.html");
+        }
+    });
     $('#exampleModalCenter').modal();
+    
 }
 
 $(document).ready(

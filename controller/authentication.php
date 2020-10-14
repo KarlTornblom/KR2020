@@ -1,8 +1,12 @@
 <?php
     session_start();
-    if($_SESSION["login"] == "?q9d$+\9YHFzb;(m2-QfH582kPH[>U-4-Z=_x.apQT3T_AjHa24#vvXf2tM:Wr8zgeCxzXV6qKzcx8B\u;!f>SZ,JS5Tp\d]#;BEY^Cd[Gb2XY<A`Czeu&E#j"){
-        echo "authenticated";
-    } else {
+    if(isset($_COOKIE["Authentication"])){
+        if($_COOKIE["Authentication"] == "9Yws8g6rA9VwAF7ELAJVSrEunhhXDpQpvJVRmj3eQSTweqVcAXx2kHUEmTYFL26NwamVF5CzLs9L84MCRgR2hvY9tuKLutfRDvgcrD7nRzJh"){
+            echo "authenticated";
+        } else {
+            echo "failed";
+        };
+    }else{
         echo "failed";
-    };
+    }
 ?>

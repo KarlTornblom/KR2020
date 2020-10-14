@@ -22,7 +22,7 @@
             '1'
         )";
     if (mysql_query($sql, $con)) {
-        // // echo "New record created successfully";
+        // echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysql_error($con);
     }

@@ -171,18 +171,19 @@
 
         <div class='col-sm-2' style='text-align: left;'>
             Revisionsmånad: <select class='form-control' id='revisionmonth' style='width:100%;'>
-            <option value='01'" . ($customer['revisionmonth'] == "01" ? " selected" : "")     . ">Januari</option>
-            <option value='02'" . ($customer['revisionmonth'] == "02" ? " selected" : "")    . ">Februari</option>
-            <option value='03'" . ($customer['revisionmonth'] == "03" ? " selected" : "")        . ">Mars</option>
-            <option value='04'" . ($customer['revisionmonth'] == "04" ? " selected" : "")       . ">April</option>
-            <option value='05'" . ($customer['revisionmonth'] == "05" ? " selected" : "")         . ">Maj</option>
-            <option value='06'" . ($customer['revisionmonth'] == "06" ? " selected" : "")        . ">Juni</option>
-            <option value='07'" . ($customer['revisionmonth'] == "07" ? " selected" : "")        . ">Juli</option>
-            <option value='08'" . ($customer['revisionmonth'] == "08" ? " selected" : "")     . ">Augusti</option>
+            <option value='01'" . ($customer['revisionmonth'] == "01" ? " selected" : "")   . ">Januari</option>
+            <option value='02'" . ($customer['revisionmonth'] == "02" ? " selected" : "")   . ">Februari</option>
+            <option value='03'" . ($customer['revisionmonth'] == "03" ? " selected" : "")   . ">Mars</option>
+            <option value='04'" . ($customer['revisionmonth'] == "04" ? " selected" : "")   . ">April</option>
+            <option value='05'" . ($customer['revisionmonth'] == "05" ? " selected" : "")   . ">Maj</option>
+            <option value='06'" . ($customer['revisionmonth'] == "06" ? " selected" : "")   . ">Juni</option>
+            <option value='07'" . ($customer['revisionmonth'] == "07" ? " selected" : "")   . ">Juli</option>
+            <option value='08'" . ($customer['revisionmonth'] == "08" ? " selected" : "")   . ">Augusti</option>
             <option value='09'" . ($customer['revisionmonth'] == "09" ? " selected" : "")   . ">September</option>
-            <option value='10'" . ($customer['revisionmonth'] == "10" ? " selected" : "")     . ">Oktober</option>
-            <option value='11'" . ($customer['revisionmonth'] == "11" ? " selected" : "")    . ">November</option>
-            <option value='12'" . ($customer['revisionmonth'] == "12" ? " selected" : "")    . ">December</option>
+            <option value='10'" . ($customer['revisionmonth'] == "10" ? " selected" : "")   . ">Oktober</option>
+            <option value='11'" . ($customer['revisionmonth'] == "11" ? " selected" : "")   . ">November</option>
+            <option value='12'" . ($customer['revisionmonth'] == "12" ? " selected" : "")   . ">December</option>
+            <option value='13'" . ($customer['revisionmonth'] == "13" ? " selected" : "")   . ">Accepterar ej revision</option>
             </select>
         </div>
 
@@ -204,18 +205,18 @@
     <div class='row'>
         <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
         Avgiftsmånad: <select class='form-control' id='chargemonth' style='width:100%;'>
-        <option value='01'" . ($customer['chargemonth'] == "01" ? " selected" : "")     . ">Januari</option>
-        <option value='02'" . ($customer['chargemonth'] == "02" ? " selected" : "")    . ">Februari</option>
-        <option value='03'" . ($customer['chargemonth'] == "03" ? " selected" : "")        . ">Mars</option>
-        <option value='04'" . ($customer['chargemonth'] == "04" ? " selected" : "")       . ">April</option>
-        <option value='05'" . ($customer['chargemonth'] == "05" ? " selected" : "")         . ">Maj</option>
-        <option value='06'" . ($customer['chargemonth'] == "06" ? " selected" : "")        . ">Juni</option>
-        <option value='07'" . ($customer['chargemonth'] == "07" ? " selected" : "")        . ">Juli</option>
-        <option value='08'" . ($customer['chargemonth'] == "08" ? " selected" : "")     . ">Augusti</option>
-        <option value='09'" . ($customer['chargemonth'] == "09" ? " selected" : "")   . ">September</option>
-        <option value='10'" . ($customer['chargemonth'] == "10" ? " selected" : "")     . ">Oktober</option>
-        <option value='11'" . ($customer['chargemonth'] == "11" ? " selected" : "")    . ">November</option>
-        <option value='12'" . ($customer['chargemonth'] == "12" ? " selected" : "")    . ">December</option>
+        <option value='01'" . ($customer['chargemonth'] == "01" ? " selected" : "") . ">Januari</option>
+        <option value='02'" . ($customer['chargemonth'] == "02" ? " selected" : "") . ">Februari</option>
+        <option value='03'" . ($customer['chargemonth'] == "03" ? " selected" : "") . ">Mars</option>
+        <option value='04'" . ($customer['chargemonth'] == "04" ? " selected" : "") . ">April</option>
+        <option value='05'" . ($customer['chargemonth'] == "05" ? " selected" : "") . ">Maj</option>
+        <option value='06'" . ($customer['chargemonth'] == "06" ? " selected" : "") . ">Juni</option>
+        <option value='07'" . ($customer['chargemonth'] == "07" ? " selected" : "") . ">Juli</option>
+        <option value='08'" . ($customer['chargemonth'] == "08" ? " selected" : "") . ">Augusti</option>
+        <option value='09'" . ($customer['chargemonth'] == "09" ? " selected" : "") . ">September</option>
+        <option value='10'" . ($customer['chargemonth'] == "10" ? " selected" : "") . ">Oktober</option>
+        <option value='11'" . ($customer['chargemonth'] == "11" ? " selected" : "") . ">November</option>
+        <option value='12'" . ($customer['chargemonth'] == "12" ? " selected" : "") . ">December</option>
         </select>
         </div>
     </div>
