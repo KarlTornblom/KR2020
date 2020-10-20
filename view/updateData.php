@@ -164,8 +164,8 @@
 
         <div class='col-sm-1 offset-sm-2' style='text-align: left;'>
             Revision: <select class='form-control' id='revision' style='width:fit-content;'>
-            <option" . ($customer['revision'] == "Ja" ?     "selected": "") . ">Ja</option>
-            <option" . ($customer['revision'] == "Nej" ?    "selected": "") . ">Nej</option> 
+            <option value='Ja'"     . ($customer['revision'] == "Ja" ?     "selected": "") . ">Ja</option>
+            <option value='Nej'"    . ($customer['revision'] == "Nej" ?    "selected": "") . ">Nej</option> 
             </select>
         </div>
 
