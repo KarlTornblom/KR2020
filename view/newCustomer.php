@@ -269,8 +269,8 @@
             
                 <div class='col-sm-1 offset-sm-2' style='text-align: left;'>
                     Revision: <select class='form-control' id='revision' style='width:fit-content;'>
-                        <option selected>Ja</option>
-                        <option>Nej</option>
+                        <option value='Ja' selected>Ja</option>
+                        <option value='Nej'>Nej</option>
                     </select>
                 </div>
                 
