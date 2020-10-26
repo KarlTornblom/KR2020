@@ -337,10 +337,27 @@
 
     <div class='row'>
         <div class='col-sm-4 offset-sm-2' style='text-align: left;'>
-            <button id='" . $id . "'type='button' onclick='setUpdateData(this.id, 0)' class='btn btn-danger'>Ta bort kund</button>
+            <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModal'>Ta bort kund</button>
         </div>
         <div class='col-sm-4' style='text-align: left;'>
             <button id='" . $id . "'type='button' onclick='setUpdateData(this.id, 1)' class='btn btn-primary'>Spara</button>
+        </div>
+    </div>
+
+    
+    <!--Ta bort Modal -->
+
+    <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
+                <div class='modal-body'>
+                    Är du säker på att du vill ta bort den här kunden?
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary mr-auto' data-dismiss='modal'>Nej, ta ej bort kund</button>
+                    <button id='" . $id . "'type='button' onclick='setUpdateData(this.id, 0)' class='btn btn-danger' data-dismiss='modal'>Ja, ta bort kund</button>
+                </div>
+            </div>
         </div>
     </div>";
 
