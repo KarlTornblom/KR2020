@@ -5,7 +5,7 @@
     $userInput = $_GET['userInput'];
     $search = "%" . $userInput['search'] . "%";
     //TODO: this sql seems to be inconsistent for certain worknames, not sure why
-    $result = mysql_query("SELECT * FROM customers WHERE clinic_name LIKE '$search' OR workname LIKE '$search' AND Active = 1",$con);
+    $result = mysql_query("SELECT * FROM customers WHERE clinic_name LIKE '$search' AND Active = 1 OR workname LIKE '$search' AND Active = 1 ORDER BY clinic_name",$con);
     
     if(mysql_num_rows($result) > 0){
         echo "

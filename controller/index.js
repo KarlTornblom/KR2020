@@ -370,6 +370,7 @@ function setUpdateData(id, active){
         customer_manager:$("#customer_manager").val(),
         active:active
     };
+    
     $.get("../model/setUpdateData.php", {userInfo: userInfo},
         function () {
             getData();
